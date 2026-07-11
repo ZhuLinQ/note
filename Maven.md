@@ -9,7 +9,7 @@
 		</dependency>
 		```
 	2. 项目构建：Maven提供了标准化的跨平台的自动化构建方式。 Maven提供了一套简单的命令来完成项目构建。
-		![[maven_order.png]]
+		![maven_order](img/maven_order.png)
 	3. 统一项目结构
 	**maven-project01**
 
