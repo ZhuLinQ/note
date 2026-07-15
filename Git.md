@@ -1,5 +1,3 @@
-# Git — 版本控制工具
-
 ## 什么是 Git？
 
 **Git** 是一个**分布式版本控制系统**，由 Linus Torvalds 于 2005 年创建，用于高效地管理项目的代码变更历史。
@@ -19,8 +17,8 @@
 ## 基本工作流程
 
 ```
-工作区 (Working Directory)  →  暂存区 (Staging Area)  →  本地仓库 (Local Repo)  →  远程仓库 (Remote Repo)
-     │                               │                        │                          │
+1.工作区 (Working Directory)  →  2.暂存区 (Staging Area)  →  3.本地仓库 (Local Repo)  →  4.远程仓库 (Remote Repo)
+      │                               │                        │                         │
   修改文件                      git add                   git commit                  git push
 ```
 
