@@ -344,6 +344,91 @@ git switch -c feat/new-feature upstream/main
 
 ---
 
+## 📄 .gitignore — 忽略规则文件
+
+### 什么是 .gitignore？
+
+**.gitignore** 是 Git 仓库中的一种**特殊配置文件**，用于告诉 Git **哪些文件或文件夹不应该被版本控制追踪**。
+
+### 为什么要用 .gitignore？
+
+| 原因 | 说明 |
+|------|------|
+| **避免提交敏感信息** | 密码、API Key、私钥等不应进入版本库 |
+| **减少仓库冗余** | 系统文件、编译产物、临时文件无需追踪 |
+| **保持仓库整洁** | 只追踪源代码和必要资源，不追踪生成的文件 |
+| **避免冲突** | 每个人的本地配置（如 IDE 设置）互不影响 |
+
+### 语法速览
+
+```
+# 以 # 开头的是注释
+*.log              # 忽略所有 .log 文件
+node_modules/      # 忽略 node_modules 整个目录
+build/             # 忽略 build 整个目录
+.env               # 忽略 .env 文件
+
+!important.log     # 不忽略 important.log（对前面的规则取反）
+
+*.tmp              # 忽略所有 .tmp 文件
+temp/*.tmp         # 只忽略 temp/ 下的 .tmp 文件
+```
+
+| 规则 | 含义 |
+|------|------|
+| `*.ext` | 忽略所有 `.ext` 结尾的文件 |
+| `folder/` | 忽略整个 `folder` 目录（结尾的 `/` 表示目录） |
+| `/file.txt` | 仅忽略仓库根目录下的 `file.txt`（`/` 表示根目录） |
+| `!file.txt` | 不忽略 `file.txt`（对之前的规则取反） |
+| `**/logs` | 匹配任意层级的 `logs` 目录（`**` 表示任意深度） |
+
+### 实际示例 — 本仓库的 .gitignore
+
+```
+# === 忽略配置/辅助文件夹 ===
+.obsidian/
+.claude/
+.grimoire/
+
+# === 忽略系统文件 ===
+.DS_Store
+Thumbs.db
+desktop.ini
+```
+
+- `.obsidian/` — Obsidian 的本地配置，不同设备可能不同，不应对团队共享
+- `.claude/`、`.grimoire/` — AI 辅助工具的本地缓存，不必提交
+- `.DS_Store`、`Thumbs.db`、`desktop.ini` — 操作系统生成的无关文件，提交只会增加噪音
+
+> 💡 **策略说明**：本仓库的 `.gitignore` 只列出需要忽略的内容，未在其中的文件（`.md` 笔记、`.png/.jpg` 图片等）默认都会被 Git 追踪，无需额外声明。
+
+### .gitignore 生效规则
+
+1. **就近优先**：子目录中的 `.gitignore` 会覆盖父目录的规则
+2. **逐层叠加**：Git 会合并所有层级的 `.gitignore` 规则
+3. **忽略已追踪文件**：如果文件已经被 `git add` / `git commit` 追踪过，加入 `.gitignore` 不会让它自动被忽略——需先执行 `git rm --cached <file>` 从追踪中移除
+
+### 如何判断是否生效？
+
+```bash
+# 查看哪些文件被忽略（显示被忽略的文件列表）
+git status --ignored
+
+# 检查某个具体规则的效果
+git check-ignore -v <文件名>
+```
+
+### 常用的 .gitignore 模板
+
+不同语言/框架有通用的 `.gitignore` 模板，可以参考 [github/gitignore](https://github.com/github/gitignore)：
+
+- [Python](https://github.com/github/gitignore/blob/main/Python.gitignore)
+- [Node](https://github.com/github/gitignore/blob/main/Node.gitignore)
+- [Java](https://github.com/github/gitignore/blob/main/Java.gitignore)
+- 更多…
+
+---
+
 ## 学习资源
 
 - [官方文档](https://git-scm.com/doc) — 最权威的 Git 文档

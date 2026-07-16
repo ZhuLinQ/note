@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "0c8961b9a8064982",
+        "id": "f2a492b091c65d67",
         "type": "tabs",
         "children": [
           {
-            "id": "b51c8c9b3906f9f4",
+            "id": "53abe8291d03cc78",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Docker.md",
+                "file": "Git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Docker"
+              "title": "Git"
             }
           }
         ]
@@ -34,19 +34,6 @@
         "id": "6a143362d5ca8fa4",
         "type": "tabs",
         "children": [
-          {
-            "id": "49f512ad7052b95f",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "文件列表"
-            }
-          },
           {
             "id": "9ff9f152bc17b4d5",
             "type": "leaf",
@@ -73,12 +60,26 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
+          },
+          {
+            "id": "431e4a102c04cbe2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 210.5
   },
   "right": {
     "id": "4a345b1bfcf3cc59",
@@ -180,8 +181,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 320.5,
-    "collapsed": true
+    "width": 608.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -195,13 +195,14 @@
       "grimoire:Open Grimoire": false
     }
   },
-  "active": "b51c8c9b3906f9f4",
+  "active": "2d7cf42399a5ada7",
   "lastOpenFiles": [
     "Redis.md",
     "Maven.md",
     "Linux.md",
-    "Git.md",
     "JavaWeb.md",
+    "Git.md",
+    "未命名.base",
     "Docker.md",
     "img/docker3.png",
     "img/docker2.png",
@@ -216,7 +217,6 @@
     "未命名",
     "git.ignore",
     "Git — 版本控制工具.md",
-    "未命名.base",
     "2026-07-09.md",
     "img",
     "欢迎.md",
